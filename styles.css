@@ -50,7 +50,7 @@ table {
 
 :root {
   --stage-width: 1200px;
-  --stage-height: 800px;
+  --stage-height: calc(800px - var(--inventory-item-height));
   --inventory-item-height: 50px;
   --inventory-height: calc(var(--inventory-item-height) + 1em);
 }
@@ -67,37 +67,36 @@ body {
   background-color: #000;
 }
 
-::-webkit-scrollbar {
-  display: none;
+#content {
+  width: max-content;
+  margin: auto;
 }
 
-.stage-wrapper {
-  width: var(--stage-width);
-  height: calc(var(--stage-height) - var(--inventory-height));
-  margin: 0 auto;
-  overflow: auto;
-  scrollbar-width: none;
+.wrapper {
+  display: grid;
+  grid-template-areas: "stage" "utility";
+  grid-template-columns: minmax(320px, 1200px);
+  grid-template-rows: 800px;
 }
 
 .stage {
+  grid-area: stage;
   position: relative;
+  overflow: auto;
   background-color: beige;
-  overflow: hidden;
-  width: 1600px;
-  height: 800px;
 }
 
 .inventory {
+  grid-area: utility;
   padding-left: 0.5em;
   padding-right: 0.5em;
   height: var(--inventory-height);
-  width: 1200px;
+  width: var(--stage-width);
   margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   overflow: auto;
-  scrollbar-width: none;
 }
 
 .inventory > * {

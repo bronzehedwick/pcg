@@ -1,0 +1,179 @@
+/* http://meyerweb.com/eric/tools/css/reset/ {{{
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* }}} */
+
+:root {
+  --stage-width: 1200px;
+  --stage-height: 800px;
+  --inventory-item-height: 50px;
+  --inventory-height: calc(var(--inventory-item-height) + 1em);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: #000;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.stage-wrapper {
+  width: var(--stage-width);
+  height: calc(var(--stage-height) - var(--inventory-height));
+  margin: 0 auto;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.stage {
+  position: relative;
+  background-color: beige;
+  overflow: hidden;
+  width: 1600px;
+  height: 800px;
+}
+
+.inventory {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  height: var(--inventory-height);
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.inventory > * {
+  flex: 0 0 auto;
+}
+
+.inventory > * + * {
+  margin-left: 1em;
+}
+
+/* Demo data {{{ */
+
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+.stage .box {
+  position: absolute;
+}
+
+.stage .box-1 {
+  top: 200px;
+  left: 150px;
+}
+
+.stage .box-2 {
+  top: 700px;
+  left: 650px;
+}
+
+.stage .box-3 {
+  top: 10px;
+  left: 1150px;
+}
+
+.stage .box-4 {
+  top: calc(var(--stage-height) / 2);
+  left: calc(var(--stage-width) / 2);
+}
+
+.stage .box-1 {
+  top: 700px;
+  left: 1500px;
+}
+
+.inventory .box {
+  width: var(--inventory-item-height);
+  height: var(--inventory-item-height);
+}
+
+.box-1 {
+  background-color: pink;
+}
+
+.box-2 {
+  background-color: limegreen;
+}
+
+.box-3 {
+  background-color: orange;
+}
+
+.box-4 {
+  background-color: rebeccapurple;
+}
+
+.box-5 {
+  background-color: lightblue;
+}
+
+.inventory {
+  background-color: aquamarine;
+}
+
+/* }}} */
+
+/* vim: fdm=marker
+ */

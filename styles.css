@@ -49,10 +49,9 @@ table {
 /* }}} */
 
 :root {
+  --inventory-height: 6em;
   --stage-width: 1200px;
-  --stage-height: calc(800px - var(--inventory-item-height));
-  --inventory-item-height: 50px;
-  --inventory-height: calc(var(--inventory-item-height) + 1em);
+  --stage-height: calc(800px - var(--inventory-height) - 30px);
   overflow: hidden;
   font-size: 10px;
 }
@@ -67,7 +66,7 @@ body {
 
 .wrapper {
   max-width: var(--stage-width);
-  max-height: calc(var(--stage-height) - var(--inventory-height));
+  max-height: var(--stage-height);
   margin: auto;
   position: relative;
 }
@@ -77,7 +76,7 @@ body {
   overflow: auto;
   background-color: beige;
   width: var(--stage-width);
-  height: calc(var(--stage-height) - var(--inventory-height) - 30px);
+  height: var(--stage-height);
 }
 
 .inventory {
@@ -100,7 +99,7 @@ body {
   .inventory {
     top: 0;
     width: var(--inventory-height);
-    height: calc(var(--stage-height) - var(--inventory-height) - 30px);
+    height: var(--stage-height);
     flex-flow: column nowrap;
   }
 }
@@ -147,8 +146,8 @@ body {
 }
 
 .inventory .box {
-  width: var(--inventory-item-height);
-  height: var(--inventory-item-height);
+  width: 5em;
+  height: 5em;
 }
 
 .box-1 {

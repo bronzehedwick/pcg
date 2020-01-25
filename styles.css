@@ -53,58 +53,61 @@ table {
   --stage-height: calc(800px - var(--inventory-item-height));
   --inventory-item-height: 50px;
   --inventory-height: calc(var(--inventory-item-height) + 1em);
+  overflow: hidden;
+  font-size: 10px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  font-size: 10px;
-}
-
 body {
   background-color: #000;
 }
 
-#content {
-  width: max-content;
-  margin: auto;
-}
-
 .wrapper {
-  display: grid;
-  grid-template-areas: "stage" "utility";
-  grid-template-columns: minmax(320px, 1200px);
-  grid-template-rows: 800px;
+  max-width: var(--stage-width);
+  max-height: calc(var(--stage-height) - var(--inventory-height));
+  margin: auto;
+  position: relative;
 }
 
 .stage {
-  grid-area: stage;
   position: relative;
   overflow: auto;
   background-color: beige;
+  width: var(--stage-width);
+  height: calc(var(--stage-height) - var(--inventory-height) - 30px);
 }
 
 .inventory {
-  grid-area: utility;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  height: var(--inventory-height);
-  width: var(--stage-width);
-  margin: 0 auto;
   display: flex;
-  flex-flow: row nowrap;
+  position: fixed;
   align-items: center;
   overflow: auto;
 }
 
-.inventory > * {
-  flex: 0 0 auto;
+@media screen and (orientation: portrait) {
+  .inventory {
+    bottom: 0;
+    height: var(--inventory-height);
+    width: var(--stage-width);
+    flex-flow: row nowrap;
+  }
 }
 
-.inventory > * + * {
-  margin-left: 1em;
+@media screen and (orientation: landscape) {
+  .inventory {
+    top: 0;
+    width: var(--inventory-height);
+    height: calc(var(--stage-height) - var(--inventory-height) - 30px);
+    flex-flow: column nowrap;
+  }
+}
+
+.inventory > * {
+  flex: 0 0 auto;
+  margin: 0.5em;
 }
 
 /* Demo data {{{ */

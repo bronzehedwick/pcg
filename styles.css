@@ -76,24 +76,37 @@ body {
   position: fixed;
   align-items: center;
   overflow: auto;
+  width: 100vw;
+  height: 100vh;
 }
 
 @media screen and (orientation: portrait) {
+
+  .stage {
+    height: calc(100vh - var(--utility-bar-size));
+  }
+
   .utility-bar {
     bottom: 0;
-    width: var(--stage-width);
     height: var(--utility-bar-size);
     flex-flow: row nowrap;
   }
+
 }
 
 @media screen and (orientation: landscape) {
+
+  .stage {
+    width: calc(100vw - var(--utility-bar-size));
+    margin-left: var(--utility-bar-size);
+  }
+
   .utility-bar {
     top: 0;
     width: var(--utility-bar-size);
-    height: var(--stage-height);
     flex-flow: column nowrap;
   }
+
 }
 
 .utility-bar > * {

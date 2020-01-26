@@ -114,67 +114,39 @@ body {
   margin: 0.5em;
 }
 
+.stage .game-object {
+  position: absolute;
+}
+
 /* Demo data {{{ */
 
-.box {
+.game-object {
   width: 100px;
   height: 100px;
 }
 
-.stage .box {
-  position: absolute;
-  font-size: 5em;
-  line-height: 2;
-  text-indent: 1.5ch;
-}
-
-.stage .box-1 {
-  top: 200px;
-  left: 150px;
-}
-
-.stage .box-2 {
-  top: 700px;
-  left: 650px;
-}
-
-.stage .box-3 {
-  top: 10px;
-  left: 1150px;
-}
-
-.stage .box-4 {
-  top: calc(var(--stage-height) / 2);
-  left: calc(var(--stage-width) / 2);
-}
-
-.stage .box-1 {
-  top: 700px;
-  left: 1500px;
-}
-
-.utility-bar .box {
+.utility-bar .game-object {
   width: 5em;
   height: 5em;
 }
 
-.box-1 {
+.game-object-1 {
   background-color: pink;
 }
 
-.box-2 {
+.game-object-2 {
   background-color: limegreen;
 }
 
-.box-3 {
+.game-object-3 {
   background-color: orange;
 }
 
-.box-4 {
+.game-object-4 {
   background-color: rebeccapurple;
 }
 
-.box-5 {
+.game-object-5 {
   background-color: lightblue;
 }
 

@@ -49,9 +49,9 @@ table {
 /* }}} */
 
 :root {
-  --inventory-height: 6em;
+  --utility-bar-size: 6em;
   --stage-width: 1200px;
-  --stage-height: calc(800px - var(--inventory-height) - 30px);
+  --stage-height: calc(800px - var(--utility-bar-size) - 30px);
   overflow: hidden;
   font-size: 10px;
 }
@@ -64,22 +64,14 @@ body {
   background-color: #000;
 }
 
-.wrapper {
-  max-width: var(--stage-width);
-  max-height: var(--stage-height);
-  margin: auto;
-  position: relative;
-}
-
 .stage {
   position: relative;
   overflow: auto;
-  background-color: beige;
-  width: var(--stage-width);
-  height: var(--stage-height);
+  width: 100vw;
+  height: 100vh;
 }
 
-.inventory {
+.utility-bar {
   display: flex;
   position: fixed;
   align-items: center;
@@ -87,24 +79,24 @@ body {
 }
 
 @media screen and (orientation: portrait) {
-  .inventory {
+  .utility-bar {
     bottom: 0;
-    height: var(--inventory-height);
     width: var(--stage-width);
+    height: var(--utility-bar-size);
     flex-flow: row nowrap;
   }
 }
 
 @media screen and (orientation: landscape) {
-  .inventory {
+  .utility-bar {
     top: 0;
-    width: var(--inventory-height);
+    width: var(--utility-bar-size);
     height: var(--stage-height);
     flex-flow: column nowrap;
   }
 }
 
-.inventory > * {
+.utility-bar > * {
   flex: 0 0 auto;
   margin: 0.5em;
 }
@@ -118,6 +110,9 @@ body {
 
 .stage .box {
   position: absolute;
+  font-size: 5em;
+  line-height: 2;
+  text-indent: 1.5ch;
 }
 
 .stage .box-1 {
@@ -145,7 +140,7 @@ body {
   left: 1500px;
 }
 
-.inventory .box {
+.utility-bar .box {
   width: 5em;
   height: 5em;
 }
@@ -170,7 +165,7 @@ body {
   background-color: lightblue;
 }
 
-.inventory {
+.utility-bar {
   background-color: aquamarine;
 }
 

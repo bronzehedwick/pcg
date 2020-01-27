@@ -49,7 +49,6 @@ table {
 /* }}} */
 
 :root {
-  --utility-bar-size: 6em;
   --stage-width: 1200px;
   --stage-height: calc(800px - var(--utility-bar-size) - 30px);
   overflow: hidden;
@@ -62,6 +61,10 @@ table {
 
 body {
   background-color: #000;
+}
+
+.content {
+  font-size: 1.7rem;
 }
 
 .stage {
@@ -80,7 +83,15 @@ body {
   height: 100vh;
 }
 
+.utility-bar > * {
+  flex: 0 0 auto;
+  margin: 0.5em;
+}
+
 @media screen and (orientation: portrait) {
+  :root {
+    --utility-bar-size: 3em;
+  }
 
   .stage {
     height: calc(100vh - var(--utility-bar-size));
@@ -95,6 +106,9 @@ body {
 }
 
 @media screen and (orientation: landscape) {
+  :root {
+    --utility-bar-size: 14ch;
+  }
 
   .stage {
     width: calc(100vw - var(--utility-bar-size));
@@ -107,11 +121,6 @@ body {
     flex-flow: column nowrap;
   }
 
-}
-
-.utility-bar > * {
-  flex: 0 0 auto;
-  margin: 0.5em;
 }
 
 .stage .game-object {

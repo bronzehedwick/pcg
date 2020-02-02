@@ -14,30 +14,34 @@
       });
   }
 
+  /**
+   * Render the given room
+   * @param {string} id - The identifier for the room to render.
+   * @return {void}
+   */
   function renderRoom(id) {
     const template = document.getElementById(id).content.cloneNode(true);
     const stage = document.getElementById('stage');
     stage.innerHTML = '';
     stage.appendChild(template);
     layoutGameObjects();
-  };
-
-  function utilityBarCallback(event) {
-    const element = event.target.closest('button');
-    const active = document.querySelector('.utility-bar .active');
-    if (active) {
-      active.classList.remove('active');
-    }
-    element.classList.add('active');
-    document
-      .getElementById('stage')
-      .dataset
-      .verbActive = element.id.split('verb-')[1];
   }
 
+  // Add state of current active verb to the stage data attribute.
   document
     .getElementById('utility-bar')
-    .addEventListener('pointerup', utilityBarCallback, false);
+    .addEventListener('pointerup', event => {
+      const element = event.target.closest('button');
+      const active = document.querySelector('.utility-bar .active');
+      if (active) {
+        active.classList.remove('active');
+      }
+      element.classList.add('active');
+      document
+        .getElementById('stage')
+        .dataset
+        .verbActive = element.id.split('verb-')[1];
+    }, false);
 
   renderRoom(document.querySelector('[data-initial]').id);
   // renderRoom('room-2');

@@ -121,40 +121,11 @@ body {
 
 }
 
-.stage .game-object {
-  position: absolute;
-}
-
 /* Demo data {{{ */
-
-.game-object {
-  width: 100px;
-  height: 100px;
-}
 
 .utility-bar .game-object {
   width: 5em;
   height: 5em;
-}
-
-.game-object-1 {
-  background-color: pink;
-}
-
-.game-object-2 {
-  background-color: limegreen;
-}
-
-.game-object-3 {
-  background-color: orange;
-}
-
-.game-object-4 {
-  background-color: rebeccapurple;
-}
-
-.game-object-5 {
-  background-color: lightblue;
 }
 
 .utility-bar {

@@ -1,10 +1,11 @@
 {
   "name": "pcg",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A web-based point and click game engine.",
-  "main": "main.js",
+  "main": "web/index.html",
   "scripts": {
-    "test": "npm test"
+    "lint": "eslint web",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/bronzehedwick/pcg/issues"
   },
-  "homepage": "https://github.com/bronzehedwick/pcg#readme"
+  "homepage": "https://github.com/bronzehedwick/pcg#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
 }

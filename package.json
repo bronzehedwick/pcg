@@ -1,0 +1,22 @@
+{
+  "name": "pcg",
+  "version": "1.0.0",
+  "description": "A web-based point and click game engine.",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bronzehedwick/pcg.git"
+  },
+  "keywords": [
+    "games"
+  ],
+  "author": "Chris DeLuca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bronzehedwick/pcg/issues"
+  },
+  "homepage": "https://github.com/bronzehedwick/pcg#readme"
+}

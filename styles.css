@@ -49,8 +49,6 @@ table {
 /* }}} */
 
 :root {
-  --stage-width: 1200px;
-  --stage-height: calc(800px - var(--utility-bar-size) - 30px);
   overflow: hidden;
   font-size: 10px;
 }
@@ -89,7 +87,7 @@ body {
 }
 
 @media screen and (orientation: portrait) {
-  :root {
+  .content {
     --utility-bar-size: 3em;
   }
 
@@ -106,7 +104,7 @@ body {
 }
 
 @media screen and (orientation: landscape) {
-  :root {
+  .content {
     --utility-bar-size: 14ch;
   }
 

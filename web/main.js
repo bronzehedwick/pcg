@@ -57,8 +57,12 @@
       styleElement.textContent = `.wrapper {
         top: ${y}px;
         left: ${x}px;
-        background-color: ${this.getAttribute('color')};
       }`;
+
+      const graphic = this.querySelector('svg, img');
+      if (graphic) {
+        wrapperElement.appendChild(graphic);
+      }
 
       shadow.appendChild(linkElement);
       shadow.appendChild(styleElement);

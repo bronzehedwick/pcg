@@ -66,6 +66,7 @@ body {
 }
 
 .stage {
+  cursor: crosshair;
   position: relative;
   overflow: auto;
   width: 100vw;

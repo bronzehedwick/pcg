@@ -26,7 +26,7 @@
       document
         .getElementById('stage')
         .dataset
-        .verbActive = element.id.split('verb-')[1];
+        .verbActive = element.id;
     }, false);
 
   /**
@@ -42,31 +42,15 @@
     constructor() {
       super();
 
-      const shadow = this.attachShadow({mode: 'open'});
+      const template = document.getElementById('game-object-template').content;
 
-      const linkElement = document.createElement('link');
-      linkElement.setAttribute('rel', 'stylesheet');
-      linkElement.setAttribute('href', 'components/game-object.css');
-
-      const wrapperElement = document.createElement('div');
-      wrapperElement.setAttribute('class', 'wrapper');
-
-      const styleElement = document.createElement('style');
-      const y = this.getAttribute('y') ? this.getAttribute('y') : 0;
-      const x = this.getAttribute('x') ? this.getAttribute('x') : 0;
-      styleElement.textContent = `.wrapper {
-        top: ${y}px;
-        left: ${x}px;
+      template.getElementById('inline-styles').textContent = `.wrapper {
+        top: ${this.getAttribute('y') ? this.getAttribute('y') : 0}px;
+        left: ${this.getAttribute('x') ? this.getAttribute('x') : 0}px;
       }`;
 
-      const graphic = this.querySelector('svg, img');
-      if (graphic) {
-        wrapperElement.appendChild(graphic);
-      }
-
-      shadow.appendChild(linkElement);
-      shadow.appendChild(styleElement);
-      shadow.appendChild(wrapperElement);
+      this.attachShadow({mode: 'open'})
+        .appendChild(template.cloneNode(true));
     }
   }
   customElements.define('game-object', GameObject);

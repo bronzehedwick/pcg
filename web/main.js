@@ -55,6 +55,39 @@
   }
   customElements.define('game-object', GameObject);
 
+  class TextDisplay extends HTMLElement {
+    constructor() {
+      super();
+
+      const shadow = this.attachShadow({mode: 'open'});
+
+      const linkElement = document.createElement('link');
+      linkElement.setAttribute('rel', 'stylesheet');
+      linkElement.setAttribute('href', 'components/text-display.css');
+
+      const textElement = document.createElement('p');
+      textElement.setAttribute('id', 'text-box');
+      textElement.setAttribute('class', 'text-box');
+
+      shadow.appendChild(linkElement);
+      shadow.appendChild(textElement);
+    }
+
+    static get observedAttributes() { return ['text']; }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+      this
+        .shadowRoot
+        .getElementById('text-box')
+        .innerHTML = newValue
+          .trim()
+          .split('')
+          .map(char => `<span class="char">${char}</span>`)
+          .join('');
+    }
+  }
+  customElements.define('text-display', TextDisplay);
+
   renderRoom(document.querySelector('[data-initial]').id);
   // renderRoom('room-2');
 

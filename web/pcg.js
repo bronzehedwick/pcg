@@ -42,15 +42,28 @@
     constructor() {
       super();
 
-      const template = document.getElementById('game-object-template').content;
+      const shadow = this.attachShadow({mode: 'open'});
 
-      template.getElementById('inline-styles').textContent = `.wrapper {
+      const styleElement = document.createElement('style');
+      styleElement.textContent = `.wrapper {
+        position: absolute;
+        width: 100px;
+        height: 100px;
         top: ${this.getAttribute('y') ? this.getAttribute('y') : 0}px;
         left: ${this.getAttribute('x') ? this.getAttribute('x') : 0}px;
       }`;
 
-      this.attachShadow({mode: 'open'})
-        .appendChild(template.cloneNode(true));
+      const wrapperElement = document.createElement('div');
+      wrapperElement.setAttribute('class', 'wrapper');
+
+      const template = this.getAttribute('template') ?
+        document.getElementById(this.getAttribute('template')).content : false;
+
+      shadow.appendChild(styleElement);
+      if (template) {
+        wrapperElement.appendChild(template.cloneNode(true));
+      }
+      shadow.appendChild(wrapperElement);
     }
   }
   customElements.define('game-object', GameObject);

@@ -11,13 +11,16 @@ class TextDisplay extends HTMLElement {
     super();
 
     const shadow = this.attachShadow({mode: 'open'});
+
     const linkElement = document.createElement('link');
     linkElement.setAttribute('rel', 'stylesheet');
     linkElement.setAttribute('href', 'components/text-display/text-display.css');
+
     const textBox = document.createElement('p');
     textBox.setAttribute('id', 'text-box');
     textBox.setAttribute('class', 'text-box');
     textBox.setAttribute('hidden', '');
+
     const accessibleTextBox = document.createElement('div');
     accessibleTextBox.setAttribute('id', 'accessible-text-box');
     accessibleTextBox.setAttribute('class', 'accessible-text-box');
@@ -25,15 +28,18 @@ class TextDisplay extends HTMLElement {
     accessibleTextBox.setAttribute('aria-live', 'assertive');
     accessibleTextBox.setAttribute('aria-atomic', 'true');
     accessibleTextBox.setAttribute('aria-relevant', 'additions');
+
     const continueButton = document.createElement('button');
     continueButton.setAttribute('id', 'continue');
     continueButton.setAttribute('class', 'continue');
     continueButton.hidden = true;
     continueButton.textContent = 'Continue…';
+
     shadow.appendChild(linkElement);
     shadow.appendChild(textBox);
     shadow.appendChild(accessibleTextBox);
     shadow.appendChild(continueButton);
+
     this.continueButton = continueButton;
     this.textBox = textBox;
     this.accessibleTextBox = accessibleTextBox;

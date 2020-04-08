@@ -24,10 +24,27 @@
       }
       element.classList.add('active');
       document
-        .getElementById('stage')
+        .body
         .dataset
         .verbActive = element.id;
     }, false);
+
+  /**
+   * Event handler for game object pointerup events.
+   * @param {Event} event - The pointerup event.
+   * @return {void}
+   */
+  function gameObjectClickCallback(event) {
+    const verb = document.body.dataset.verbActive;
+    if (!verb) return;
+    const textElement = event.target.closest('game-object')
+      .querySelector(`[data-verb-trigger="${verb}"`);
+    let textContent = `That couldn't possibly work.`;
+    if (textElement) {
+      textContent = textElement.textContent;
+    }
+    document.querySelector('text-display').setAttribute('text', textContent);
+  }
 
   /**
    * `<game-object>` is the base object for all stage items.
@@ -51,7 +68,10 @@
         height: 100px;
         top: ${this.getAttribute('y') ? this.getAttribute('y') : 0}px;
         left: ${this.getAttribute('x') ? this.getAttribute('x') : 0}px;
-      }`;
+      }
+      slot[name="text"] {
+        display: none;
+      };`;
 
       const wrapperElement = document.createElement('div');
       wrapperElement.setAttribute('class', 'wrapper');
@@ -64,6 +84,8 @@
         wrapperElement.appendChild(template.cloneNode(true));
       }
       shadow.appendChild(wrapperElement);
+
+      this.addEventListener('pointerup', gameObjectClickCallback, false);
     }
   }
   customElements.define('game-object', GameObject);

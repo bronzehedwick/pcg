@@ -15,10 +15,10 @@
 
   // Add state of current active verb to the stage data attribute.
   document
-    .getElementById('utility-bar')
+    .querySelector('actions-menu')
     .addEventListener('pointerup', event => {
       const element = event.target.closest('button');
-      const active = document.querySelector('.utility-bar .active');
+      const active = document.querySelector('actions-menu .active');
       if (active) {
         active.classList.remove('active');
       }

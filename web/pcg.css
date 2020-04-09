@@ -59,9 +59,6 @@ table {
 
 body {
   background-color: #000;
-}
-
-.content {
   font-size: 1.7rem;
 }
 
@@ -72,7 +69,7 @@ body {
   height: 100vh;
 }
 
-.utility-bar {
+.actions-menu {
   display: flex;
   position: fixed;
   align-items: center;
@@ -81,41 +78,41 @@ body {
   height: 100vh;
 }
 
-.utility-bar > * {
+.actions-menu > * {
   flex: 0 0 auto;
   margin: 0.5em;
 }
 
 @media screen and (orientation: portrait) {
-  .content {
-    --utility-bar-size: 3em;
+  body {
+    --actions-menu-size: 3em;
   }
 
   .stage {
-    height: calc(100vh - var(--utility-bar-size));
+    height: calc(100vh - var(--actions-menu-size));
   }
 
-  .utility-bar {
+  .actions-menu {
     bottom: 0;
-    height: var(--utility-bar-size);
+    height: var(--actions-menu-size);
     flex-flow: row nowrap;
   }
 
 }
 
 @media screen and (orientation: landscape) {
-  .content {
-    --utility-bar-size: 14ch;
+  body {
+    --actions-menu-size: 14ch;
   }
 
   .stage {
-    width: calc(100vw - var(--utility-bar-size));
-    margin-left: var(--utility-bar-size);
+    width: calc(100vw - var(--actions-menu-size));
+    margin-left: var(--actions-menu-size);
   }
 
-  .utility-bar {
+  .actions-menu {
     top: 0;
-    width: var(--utility-bar-size);
+    width: var(--actions-menu-size);
     flex-flow: column nowrap;
   }
 
@@ -123,12 +120,12 @@ body {
 
 /* Demo data {{{ */
 
-.utility-bar .game-object {
+.actions-menu .game-object {
   width: 5em;
   height: 5em;
 }
 
-.utility-bar {
+.actions-menu {
   background-color: aquamarine;
 }
 

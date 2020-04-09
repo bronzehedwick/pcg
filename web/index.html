@@ -5,27 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PCG - Test</title>
   <link rel="stylesheet" href="pcg.css">
+  <script src="pcg.js" defer></script>
+  <script src="components/text-display/text-display.js" defer></script>
+  <script src="components/actions-menu/actions-menu.js" defer></script>
 </head>
 <body>
-  <script src="pcg.js" async defer></script>
-  <script src="components/text-display/text-display.js" async defer></script>
-  <main id="content" class="content">
-    <div id="stage" class="stage" data-verb-active=""></div>
-    <div id="utility-bar" class="utility-bar">
+  <main id="stage" class="stage"></main>
+  <actions-menu verbs="push pull talk take open close give look"></actions-menu>
 
-      <!-- Demo data -->
-      <button id="push" class="verb">🤲 Push</button>
-      <button id="pull" class="verb">👐 Pull</button>
-      <button id="talk" class="verb">🗣 Talk</button>
-      <button id="take" class="verb">🤏 Take</button>
-      <button id="open" class="verb">📖 Open</button>
-      <button id="close" class="verb">📘 Close</button>
-      <button id="give" class="verb">🎁 Give</button>
-      <button id="look" class="verb">👀 Look</button>
-      <!-- End demo data -->
-
-    </div>
-  </main>
   <!-- Demo data -->
 
   <template id="room-1" data-initial>

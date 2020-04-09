@@ -12,40 +12,18 @@ class TextDisplay extends HTMLElement {
 
     const shadow = this.attachShadow({mode: 'open'});
 
-    const linkElement = document.createElement('link');
-    linkElement.setAttribute('rel', 'stylesheet');
-    linkElement.setAttribute('href', 'components/text-display/text-display.css');
+    shadow.innerHTML = `
+    <link rel="stylesheet" href="components/text-display/text-display.css" />
+    <p id="text-box" class="text-box" hidden></p>
+    <div id="accessible-text-box" class="accessible-text-box" role="region" aria-live="assertive" aria-atomic="true" aria-relevant="additions"></div>
+    <button id="continue" class="continue" hidden>Continue…</button>`;
 
-    const textBox = document.createElement('p');
-    textBox.setAttribute('id', 'text-box');
-    textBox.setAttribute('class', 'text-box');
-    textBox.setAttribute('hidden', '');
-
-    const accessibleTextBox = document.createElement('div');
-    accessibleTextBox.setAttribute('id', 'accessible-text-box');
-    accessibleTextBox.setAttribute('class', 'accessible-text-box');
-    accessibleTextBox.setAttribute('role', 'region');
-    accessibleTextBox.setAttribute('aria-live', 'assertive');
-    accessibleTextBox.setAttribute('aria-atomic', 'true');
-    accessibleTextBox.setAttribute('aria-relevant', 'additions');
-
-    const continueButton = document.createElement('button');
-    continueButton.setAttribute('id', 'continue');
-    continueButton.setAttribute('class', 'continue');
-    continueButton.hidden = true;
-    continueButton.textContent = 'Continue…';
-
-    shadow.appendChild(linkElement);
-    shadow.appendChild(textBox);
-    shadow.appendChild(accessibleTextBox);
-    shadow.appendChild(continueButton);
-
-    this.continueButton = continueButton;
-    this.textBox = textBox;
-    this.accessibleTextBox = accessibleTextBox;
+    this.continueButton = shadow.getElementById('continue');
+    this.textBox = shadow.getElementById('text-box');
+    this.accessibleTextBox = shadow.getElementById('accessible-text-box');
 
     const self = this;
-    continueButton.addEventListener('pointerup', event => {
+    this.continueButton.addEventListener('pointerup', event => {
       if (this.textBox.hasAttribute('data-complete')) {
         this.continueButton.hidden = true;
         this.textBox.hidden = true;

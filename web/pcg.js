@@ -13,22 +13,6 @@
     stage.appendChild(template);
   }
 
-  // Add state of current active verb to the stage data attribute.
-  document
-    .querySelector('actions-menu')
-    .addEventListener('pointerup', event => {
-      const element = event.target.closest('button');
-      const active = document.querySelector('actions-menu .active');
-      if (active) {
-        active.classList.remove('active');
-      }
-      element.classList.add('active');
-      document
-        .body
-        .dataset
-        .verbActive = element.id;
-    }, false);
-
   /**
    * Event handler for game object pointerup events.
    * @param {Event} event - The pointerup event.

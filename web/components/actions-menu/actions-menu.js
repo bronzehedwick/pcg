@@ -14,14 +14,26 @@ class ActionsMenu extends HTMLElement {
     this.getAttribute('verbs').split(' ').forEach(verb => {
       contents += `
         <li role="none">
-          <button id="${verb.toLowerCase()}" role="menuitemradio" aria-checked="false" class="verb">
-            ${verb.charAt().toUpperCase()}${verb.slice(1,verb.length)}
+          <button id="${verb.toLowerCase()}" class="verb" role="menuitemradio" aria-checked="false">
+            ${verb.charAt().toUpperCase()}${verb.slice(1, verb.length)}
           </button>
         </li>
       `;
     });
 
     this.innerHTML = `<ul role="menubar" class="actions-menu">${contents}</ul>`;
+
+    // Add state of current active verb to the stage data attribute.
+    this.addEventListener('pointerup', event => {
+      const element = event.target.closest('button');
+      const active = this.querySelector('.verb[aria-checked="true"]');
+      if (active) {
+        active.setAttribute('aria-checked', 'false');
+      }
+      element.setAttribute('aria-checked', 'true');
+      document.body.dataset.verbActive = element.id;
+    }, false);
+
   }
 
   /**

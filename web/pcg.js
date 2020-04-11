@@ -45,8 +45,8 @@
 
       const shadow = this.attachShadow({mode: 'open'});
 
-      const styleElement = document.createElement('style');
-      styleElement.textContent = `.wrapper {
+      shadow.innerHTML = `<style>
+      :host {
         position: absolute;
         width: 100px;
         height: 100px;
@@ -55,19 +55,15 @@
       }
       slot[name="text"] {
         display: none;
-      };`;
-
-      const wrapperElement = document.createElement('div');
-      wrapperElement.setAttribute('class', 'wrapper');
+      }
+      </style>`;
 
       const template = this.getAttribute('template') ?
         document.getElementById(this.getAttribute('template')).content : false;
 
-      shadow.appendChild(styleElement);
       if (template) {
-        wrapperElement.appendChild(template.cloneNode(true));
+        shadow.appendChild(template.cloneNode(true));
       }
-      shadow.appendChild(wrapperElement);
 
       this.addEventListener('pointerup', gameObjectClickCallback, false);
     }

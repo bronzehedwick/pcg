@@ -1,7 +1,18 @@
-.text-box,
-.continue {
+:host {
   --primary-color: #000;
   --secondary-color: #fff;
+  contain: strict;
+}
+
+@media (prefers-color-scheme: dark) {
+  :host {
+    --primary-color: #fff;
+    --secondary-color: #000;
+  }
+}
+
+.text-box,
+.continue {
   position: fixed;
   bottom: 10px;
   left: 50%;
@@ -9,14 +20,6 @@
   font-family: monospace;
   border: 2px solid var(--primary-color);
   box-shadow: 1px 1px 0px var(--secondary-color), -1px -1px 0px var(--secondary-color);
-}
-
-@media (prefers-color-scheme: dark) {
-  .continue,
-  .text-box {
-    --primary-color: #fff;
-    --secondary-color: #000;
-  }
 }
 
 .text-box {

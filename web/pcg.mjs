@@ -4,14 +4,21 @@ const roomLinks = new Map();
 Array.from(document.getElementsByTagName('link'))
   .filter(link => link.rel === 'room')
   .map(link => {
-    let key = link.href.replace(link.baseURI, '');
-    if (link.id) key = link.id;
+    let key;
+    if (link.id) {
+      // If there's an ID on the link, use it.
+      key = link.id
+    }
+    else {
+      // If there's no ID, use the base file name without extension.
+      key = link.href.replace(link.baseURI, '').split('/').pop().split('.')[0];
+    };
     return roomLinks.set(key, link.href);
   });
 
 /**
  * Load the given room.
- * @param {string} id - the id of the `<link>` tag referencing the room file you want to load, or the href of `<link>` if no id is given.
+ * @param {string} id - the id of the `<link>` tag referencing the room file you want to load, or the file name without extension of the `<link>` href if no id is given.
  * @return {void}
  */
 export async function loadRoom(id) {

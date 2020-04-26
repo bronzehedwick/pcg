@@ -1,7 +1,8 @@
 /**
  * Event handler for game object pointerup events.
+ *
  * @param {Event} event - The pointerup event.
- * @return {void}
+ * @returns {void}
  */
 function gameObjectClickCallback(event) {
   const verb = document.body.dataset.verbActive;
@@ -22,7 +23,6 @@ function gameObjectClickCallback(event) {
  * Example:
  *    <div class="stage">
  *            <game-object x="200" y="800"></game-object>
- * @customElement
  */
 class GameObject extends HTMLElement {
   constructor() {

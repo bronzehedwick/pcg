@@ -1,6 +1,5 @@
 /**
  * Class represeting the utility bar for verbs and inventory.
- * @extends HTMLElement
  */
 class ActionsMenu extends HTMLElement {
 
@@ -38,19 +37,21 @@ class ActionsMenu extends HTMLElement {
 
   /**
    * Set the attributes to watch for changes.
-   * @return {Array} An array of attributes.
+   *
+   * @returns {Array} An array of attributes.
    */
   static get observedAttributes() { return ['items']; }
 
   /**
    * Respond to attribute changes.
+   *
    * @param {string} name - The name of the attribute changed.
    * @param {string} oldValue - The previous value of the attrbute.
    * @param {string} newValue - The just-changed value of the attribute.
    * @see {@linkcode ActionsMenu#observedAttributes}
-   * @return {void}
+   * @returns {void}
    */
-  attributeChangedCallback(name, oldValue, newValue) {
-  }
+  // attributeChangedCallback(name, oldValue, newValue) {
+  // }
 }
 customElements.define('actions-menu', ActionsMenu);

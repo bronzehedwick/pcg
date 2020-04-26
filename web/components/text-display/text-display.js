@@ -1,6 +1,5 @@
 /**
  * Class represeting the box to display text from all game elements.
- * @extends HTMLElement
  */
 class TextDisplay extends HTMLElement {
 
@@ -39,12 +38,14 @@ class TextDisplay extends HTMLElement {
 
   /**
    * Set the attributes to watch for changes.
-   * @return {Array} An array of attributes.
+   *
+   * @returns {Array} An array of attributes.
    */
   static get observedAttributes() { return ['text']; }
 
   /**
    * Generator to retrieve the next letter in the sequence.
+   *
    * @param {Array} letters - An array of characters.
    * @yields {string} The next letter in sequence.
    */
@@ -59,8 +60,6 @@ class TextDisplay extends HTMLElement {
   /**
    * Print letters in typewriter effect. Automatically page content to fit
    * the dimesions of the box.
-   * @return {number} either the current index if we haven't reached the end
-   * of the page, or the intervalID if we have.
    */
   showLetters() {
     let index = 1;
@@ -90,11 +89,12 @@ class TextDisplay extends HTMLElement {
 
   /**
    * Respond to attribute changes.
+   *
    * @param {string} name - The name of the attribute changed.
    * @param {string} oldValue - The previous value of the attrbute.
    * @param {string} newValue - The just-changed value of the attribute.
    * @see {@linkcode TextDisplay#observedAttributes}
-   * @return {void}
+   * @returns {void}
    */
   attributeChangedCallback(name, oldValue, newValue) {
     if (!newValue) return;

@@ -1,7 +1,11 @@
 env:
   browser: true
   es6: true
-extends: 'eslint:recommended'
+plugins:
+  - 'jsdoc'
+extends:
+  - 'eslint:recommended'
+  - 'plugin:jsdoc/recommended'
 globals:
   Atomics: readonly
   SharedArrayBuffer: readonly

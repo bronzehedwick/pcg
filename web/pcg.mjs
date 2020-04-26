@@ -12,14 +12,17 @@ Array.from(document.getElementsByTagName('link'))
     else {
       // If there's no ID, use the base file name without extension.
       key = link.href.replace(link.baseURI, '').split('/').pop().split('.')[0];
-    };
+    }
     return roomLinks.set(key, link.href);
   });
 
 /**
  * Load the given room.
- * @param {string} id - the id of the `<link>` tag referencing the room file you want to load, or the file name without extension of the `<link>` href if no id is given.
- * @return {void}
+ *
+ * @param {string} id - the id of the `<link>` tag referencing the room file
+ * you want to load, or the file name without extension of the `<link>`
+ * href if no id is given.
+ * @returns {void}
  */
 export async function loadRoom(id) {
   const response = await window.fetch(roomLinks.get(id));

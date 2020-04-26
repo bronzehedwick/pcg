@@ -8,12 +8,19 @@
   <link id="room-1" rel="room" type="text/html" href="rooms/room-1.html">
   <link rel="room" type="text/html" href="rooms/room-2.html">
   <script src="pcg.mjs" type="module" defer></script>
-  <script src="components/game-object/game-object.js" defer></script>
+  <script src="components/game-object/game-object.mjs" type="module" defer></script>
+  <script src="components/room-portal/room-portal.mjs" type="module" defer></script>
   <script src="components/text-display/text-display.js" defer></script>
   <script src="components/actions-menu/actions-menu.js" defer></script>
 </head>
 <body>
-  <main id="stage" class="stage"></main>
+  <main id="stage" class="stage">
+    <room-portal template="game-object-template" x="200" y="400" room="room-1" triggering-verbs="push pull">
+      <span slot="graphic">
+        <img src="./images/door-clip-art-clipart-door-line-art-a553.png">
+      </span>
+    </room-portal>
+  </main>
   <actions-menu verbs="push pull talk take open close give look"></actions-menu>
   <text-display text=""></text-display>
 

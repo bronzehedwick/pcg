@@ -19,8 +19,8 @@ Array.from(document.getElementsByTagName('link'))
 /**
  * Load the given room.
  *
- * @param {string} id - the id of the `<link>` tag referencing the room file
- * you want to load, or the file name without extension of the `<link>`
+ * @param {string} id - the id of the link tag referencing the room file
+ * you want to load, or the file name without extension of the link
  * href if no id is given.
  * @returns {void}
  */

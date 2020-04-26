@@ -5,7 +5,8 @@
   "main": "web/index.html",
   "scripts": {
     "lint": "eslint web",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "jsdoc": "jsdoc -R README.md -c jsdoc_conf.js -r web/"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/bronzehedwick/pcg#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-plugin-jsdoc": "^24.0.0"
+    "eslint-plugin-jsdoc": "^24.0.0",
+    "jsdoc": "^3.6.4"
   }
 }

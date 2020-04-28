@@ -21,10 +21,3 @@ things won't work, and there are missing all over the place.
 
    meta/browser-support
    meta/license
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`

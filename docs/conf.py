@@ -60,6 +60,7 @@ html_static_path = ['_static']
 
 # Point to source files.
 js_source_path = '../web'
+jsdoc_config_path = '../.jsdoc_conf.js'
 
 # Indicate that JS is the only language.
 primary_domain = 'js'

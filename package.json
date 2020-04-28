@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint web",
     "test": "npm run lint",
-    "jsdoc": "jsdoc -R README.md -c jsdoc_conf.js -r web/"
+    "jsdoc": "jsdoc -R README.md -c .jsdoc_conf.js -r web/"
   },
   "repository": {
     "type": "git",

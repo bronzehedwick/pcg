@@ -11,13 +11,25 @@ A simple Point and Click Game engine for the web.
 ⚠️  Consider this alpha software. There will be breaking changes,
 things won't work, and there are missing all over the place.
 
-
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Getting started:
 
    usage/quickstart
    usage/installation
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Components:
+
+   components/actions-menu
+   components/game-object
+   components/room-portal
+   components/text-display
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Meta:
 
    meta/browser-support
    meta/license

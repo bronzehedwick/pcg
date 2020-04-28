@@ -8,7 +8,7 @@
 export class GameObject extends HTMLElement {
 
   /**
-   * Craete the game object.
+   * Create the game object.
    */
   constructor() {
     super();

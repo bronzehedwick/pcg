@@ -15,7 +15,7 @@
 </head>
 <body>
   <main id="stage" class="stage">
-    <room-portal template="game-object-template" x="200" y="400" room="room-1" triggering-verbs="push pull">
+    <room-portal x="200" y="400" room="room-1" triggering-verbs="push pull">
       <span slot="graphic">
         <img src="./images/door-clip-art-clipart-door-line-art-a553.png">
       </span>
@@ -23,11 +23,5 @@
   </main>
   <actions-menu verbs="push pull talk take open close give look"></actions-menu>
   <text-display text=""></text-display>
-
-  <template id="game-object-template">
-    <slot name="graphic"></slot>
-    <slot name="text"></slot>
-  </template>
-
 </body>
 </html>

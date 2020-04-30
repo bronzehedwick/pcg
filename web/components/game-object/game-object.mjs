@@ -1,3 +1,11 @@
+const gameObjectTemplate = document.createElement('template');
+gameObjectTemplate.id = 'game-object-template';
+gameObjectTemplate.innerHTML = `
+  <slot name="graphic"></slot>
+  <slot name="text"></slot>
+`;
+document.body.appendChild(gameObjectTemplate);
+
 /**
  * Class which is the base object for all stage items.
  * Pass in x and y values to position it on the canvas.
@@ -28,12 +36,8 @@ export class GameObject extends HTMLElement {
     }
     </style>`;
 
-    const template = this.getAttribute('template') ?
-      document.getElementById(this.getAttribute('template')).content : false;
-
-    if (template) {
-      shadow.appendChild(template.cloneNode(true));
-    }
+    const template = document.getElementById('game-object-template');
+    shadow.appendChild(template.content.cloneNode(true));
 
     this.callbacks = [];
     this.addEventListener('pointerup', this.delegateInteraction, false);

@@ -34,8 +34,9 @@ export class RoomPortal extends GameObject {
   roomCallback() {
     const activeVerb = document.body.dataset.verbActive;
     if (!activeVerb) return;
-    if (!activeVerb in this.triggeringVerbs) return;
-    loadRoom(this.room);
+    if (activeVerb in this.triggeringVerbs) {
+      loadRoom(this.room);
+    }
   }
 }
 customElements.define('room-portal', RoomPortal);

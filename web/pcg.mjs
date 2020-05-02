@@ -17,6 +17,40 @@ Array.from(document.getElementsByTagName('link'))
   });
 
 /**
+ * State management.
+ *
+ * @namespace State
+ * @type {object}
+ */
+const State = {
+
+  /**
+   * Initialize state.
+   *
+   * @memberof State
+   * @returns {object} - this
+   */
+  init: function init() {
+    // All verbs defined.
+    this.verbs = document
+      .getElementsByTagName('actions-menu')[0]
+      .getAttribute('verbs')
+      .split(' ');
+    return this;
+  },
+
+  /**
+   * The active verb.
+   *
+   * @memberof State
+   * @type {string}
+   */
+  activeVerb: 'default',
+};
+const state = State.init();
+export { state };
+
+/**
  * Load the given room.
  *
  * @param {string} id - the id of the link tag referencing the room file

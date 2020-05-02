@@ -1,3 +1,5 @@
+import { state } from '../../pcg.mjs';
+
 /**
  * Class represeting the utility bar for verbs and inventory.
  */
@@ -31,7 +33,7 @@ class ActionsMenu extends HTMLElement {
         active.setAttribute('aria-checked', 'false');
       }
       element.setAttribute('aria-checked', 'true');
-      document.body.dataset.verbActive = element.id;
+      state.activeVerb = element.id;
     }, false);
 
   }

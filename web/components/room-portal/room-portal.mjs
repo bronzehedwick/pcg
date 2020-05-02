@@ -1,4 +1,4 @@
-import { loadRoom } from '../../pcg.mjs';
+import { state, loadRoom } from '../../pcg.mjs';
 import { GameObject } from '../game-object/game-object.mjs';
 
 /**
@@ -32,9 +32,8 @@ export class RoomPortal extends GameObject {
    * @returns {void}
    */
   roomCallback() {
-    const activeVerb = document.body.dataset.verbActive;
-    if (!activeVerb) return;
-    if (activeVerb in this.triggeringVerbs) {
+    if (!state.activeVerb) return;
+    if (state.activeVerb in this.triggeringVerbs) {
       loadRoom(this.room);
     }
   }

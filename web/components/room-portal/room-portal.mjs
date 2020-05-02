@@ -32,8 +32,7 @@ export class RoomPortal extends GameObject {
    * @returns {void}
    */
   roomCallback() {
-    if (!state.activeVerb) return;
-    if (state.activeVerb in this.triggeringVerbs) {
+    if (state.getActiveVerb() in this.triggeringVerbs) {
       loadRoom(this.room);
     }
   }

@@ -19,35 +19,62 @@ Array.from(document.getElementsByTagName('link'))
 /**
  * State management.
  *
- * @namespace State
- * @type {object}
+ * @namespace {object} State
+ * @property {Function} getVerbs - Get all defined verbs.
+ * @property {Function} getActiveVerb - Get the currently active verb.
+ * @property {Function} setActiveVerb - Set the active verb.
  */
-const State = {
+function State() {
 
-  /**
-   * Initialize state.
-   *
-   * @memberof State
-   * @returns {object} - this
-   */
-  init: function init() {
-    // All verbs defined.
-    this.verbs = document
-      .getElementsByTagName('actions-menu')[0]
-      .getAttribute('verbs')
-      .split(' ');
-    return this;
-  },
+  let verbs = document
+    .getElementsByTagName('actions-menu')[0]
+    .getAttribute('verbs')
+    .split(' ');
 
-  /**
-   * The active verb.
-   *
-   * @memberof State
-   * @type {string}
-   */
-  activeVerb: 'default',
+  let activeVerb = 'default';
+
+  return {
+
+    /**
+     * Get all defined verbs.
+     *
+     * @memberof State
+     * @returns {Array.<string>} All defined verbs.
+     */
+    getVerbs: function getVerbs() {
+      return verbs;
+    },
+
+    /**
+     * Get currently selected verb.
+     *
+     * @memberof State
+     * @returns {string} The name of the verb.
+     */
+    getActiveVerb: function getActiveVerb() {
+      if (activeVerb in verbs) {
+        return activeVerb;
+      }
+      return 'default';
+    },
+
+    /**
+     * Set the current verb.
+     *
+     * @memberof State
+     * @param {string} verb - Name of the verb to set.
+     * @returns {void}
+     */
+    setActiveVerb: function setActiveVerb(verb) {
+      activeVerb = verb;
+    },
+
+  };
 };
-const state = State.init();
+
+// Use a closure to create private variables, and an export of the function
+// invokation - which returns an object - to create a pseudo-singleton pattern.
+const state = State();
 export { state };
 
 /**

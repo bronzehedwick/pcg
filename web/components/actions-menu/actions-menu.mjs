@@ -33,7 +33,7 @@ class ActionsMenu extends HTMLElement {
         active.setAttribute('aria-checked', 'false');
       }
       element.setAttribute('aria-checked', 'true');
-      state.activeVerb = element.id;
+      state.setActiveVerb(element.id);
     }, false);
 
   }

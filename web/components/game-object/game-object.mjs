@@ -75,12 +75,12 @@ export class GameObject extends HTMLElement {
    * @returns {void}
    */
   displayVerbText(event) {
-    if (!state.activeVerb) return;
     const textElement = event.target.closest(this.localName)
-      .querySelector(`[data-verb-trigger="${state.activeVerb}"`);
+      .querySelector(`[data-verb-trigger="${state.getActiveVerb()}"`);
     if (!textElement) return;
     const textContent = textElement.textContent;
     if (!textContent) return;
+    state.setActiveVerb('default');
     document.querySelector('text-display').setAttribute('text', textContent);
   }
 

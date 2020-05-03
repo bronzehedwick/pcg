@@ -1,8 +1,8 @@
 Game Object
 ============
 
-The base class that all stage elements extend. It is generally not meant
-to be used directly, but can be used in a pintch.
+The base class that all *stage* elements extend. It is generally not
+meant to be used directly, but can be used in a pintch.
 
 Since it provides common interfaces for generally useful functionality,
 it is a good candidate to extend for custom game elements.
@@ -47,7 +47,32 @@ To define the graphic, place an element (usually ``<div>`` or
 Responding to verbs
 ^^^^^^^^^^^^^^^^^^^
 
-TODO
+The *Game Object* provides functionality to respond to *verbs* selected
+by the player, and responding by displaying text.
+
+Other functionality is handled by elements that extend the *Game
+Object*, such as :doc:`room-portal`.
+
+To define the text, place an element (usually ``<div>`` or ``<span>``)
+inside the ``<game-object>`` with the `slot`_ name "text". Inside that,
+place any number of elements with the ``data-verb-trigger`` attribute.
+
+.. code-block:: html
+
+  <game-object x="200" y="150">
+    <span slot="text">
+      <span data-verb-trigger="greet">Hello!</span>
+      <span data-verb-trigger="examine">It's pretty interesting.</span>
+    </span>
+  </game-object>
+
+The value of each ``data-verb-trigger`` should be one of the verbs
+defined in :doc:`actions-menu`, or ``default`` for the action when
+nothing else is selected.
+
+The contents of the element should contain the text you want
+displayed in response to that verb. This text will be displayed in
+:doc:`text-display`.
 
 Full example
 ------------
@@ -102,4 +127,3 @@ The component extends `HTMLElement
 .. _<picture>: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Picture
 .. _<svg>: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg
 .. _slot: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Slot
-

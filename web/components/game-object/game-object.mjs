@@ -9,11 +9,7 @@ gameObjectTemplate.innerHTML = `
 document.body.appendChild(gameObjectTemplate);
 
 /**
- * Class which is the base object for all stage items.
- * Pass in x and y values to position it on the canvas.
- * If no value is passed, they default to 0.
- * @example
- *    <game-object x="200" y="800"></game-object>
+ * Base class for all game objects.
  */
 export class GameObject extends HTMLElement {
 
@@ -49,7 +45,7 @@ export class GameObject extends HTMLElement {
   /**
    * Call all registered interaction callbacks.
    *
-   * @param {Event} event - The pointerup event.
+   * @param {Event} event The pointerup event.
    * @returns {void}
    */
   delegateInteraction(event) {
@@ -61,7 +57,7 @@ export class GameObject extends HTMLElement {
   /**
    * Add a callback function to be called when the game object is interacted with.
    *
-   * @param {Function} fn - callback function.
+   * @param {Function} fn callback function.
    * @returns {void}
    */
   registerInteractCallback(fn) {
@@ -71,7 +67,7 @@ export class GameObject extends HTMLElement {
   /**
    * Sends the given text for the triggered verb to the text-display component.
    *
-   * @param {Event} event - The pointerup event.
+   * @param {Event} event The pointerup event.
    * @returns {void}
    */
   displayVerbText(event) {

@@ -12,7 +12,7 @@ class TextDisplay extends HTMLElement {
     const shadow = this.attachShadow({mode: 'open'});
 
     shadow.innerHTML = `
-    <link rel="stylesheet" href="components/text-display/text-display.css" />
+    <link rel="stylesheet" href="/src/components/text-display/text-display.css" />
     <p id="text-box" class="text-box" hidden></p>
     <div id="accessible-text-box" class="accessible-text-box" role="region" aria-live="assertive" aria-atomic="true" aria-relevant="additions"></div>
     <button id="continue" class="continue" hidden>Continue…</button>`;

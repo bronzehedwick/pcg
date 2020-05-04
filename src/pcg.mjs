@@ -26,8 +26,6 @@ Array.from(document.getElementsByTagName('link'))
  */
 function State() {
 
-  if (!document.getElementsByTagName('actions-menu').length) return;
-
   let verbs = document
     .getElementsByTagName('actions-menu')[0]
     .getAttribute('verbs')
@@ -76,8 +74,8 @@ function State() {
 
 // Use a closure to create private variables, and an export of the function
 // invokation - which returns an object - to create a pseudo-singleton pattern.
-const state = State();
-export { state };
+// const state = State();
+// export { state };
 
 /**
  * Load the given room.

@@ -1,4 +1,4 @@
-import { state } from '../../pcg.mjs';
+// import { state } from '../../pcg.mjs';
 
 const gameObjectTemplate = document.createElement('template');
 gameObjectTemplate.id = 'game-object-template';
@@ -71,12 +71,16 @@ export class GameObject extends HTMLElement {
    * @returns {void}
    */
   displayVerbText(event) {
+    const verb = document.body.dataset.verbActive;
+    if (!verb) return;
     const textElement = event.target.closest(this.localName)
-      .querySelector(`[data-verb-trigger="${state.getActiveVerb()}"`);
+      .querySelector(`[data-verb-trigger="${verb}"`);
+      // .querySelector(`[data-verb-trigger="${state.getActiveVerb()}"`);
     if (!textElement) return;
     const textContent = textElement.textContent;
     if (!textContent) return;
-    state.setActiveVerb('default');
+    document.body.dataset.verbActive = 'default';
+    // state.setActiveVerb('default');
     document.querySelector('text-display').setAttribute('text', textContent);
   }
 

@@ -24,30 +24,14 @@
         </span>
         <span slot="text">
           <span data-verb-trigger="default">This is the default</span>
-          <span data-verb-trigger="push">Hello</span>
-          <span data-verb-trigger="pull">Hi</span>
-          <span data-verb-trigger="talk">Whoa</span>
-          <span data-verb-trigger="take">Live</span>
-          <span data-verb-trigger="open">Too much</span>
-          <span data-verb-trigger="close">A lot over there</span>
-          <span data-verb-trigger="give">What is that?</span>
-          <span data-verb-trigger="look">Come on now this is weird.</span>
+          <span data-verb-trigger="push">I am push</span>
+          <span data-verb-trigger="pull">I am pull</span>
+          <span data-verb-trigger="talk">Hello</span>
         </span>
       </game-object>
       <game-object id="go2" x="200" y="150">
         <span slot="graphic">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.49622 352.35294"><path d="M2.53 156.472l45.534-32.437-19.96-44.287M11.886 107.194c38.06 3.685 47.256 52.514 139.1 26.822M348.098 143.996c52.937 32.66 90.984 12.155 132.863 3.743" fill="none" stroke="magenta" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M479.714 107.817l-38.05 49.278 29.94 43.04M223.344 271.87c-106.75 87.073 38.734 118.39 27.446 3.118M268.553 273.74c-22.793 119.466 88.385 49.606 28.934-15.594" fill="none" stroke="magenta" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="222.096" cy="69.144" rx="18.089" ry="24.327" fill="none" stroke="magenta" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="292.271" cy="86.609" rx="15.282" ry="16.218" fill="none" stroke="magenta" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="218.666" cy="68.832" rx="1.559" ry="3.431" fill="none" stroke="magenta" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="288.216" cy="84.114" rx=".624" ry="2.495" fill="none" stroke="magenta" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="249.854" cy="138.382" rx="98.768" ry="135.882" fill="none" stroke="magenta" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M194.65 130.897c-8.646 39.79 44.53 85.266 107.29 5.614" fill="none" stroke="magenta" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        <span slot="text">
-          <span data-verb-trigger="default">This is the default</span>
-          <span data-verb-trigger="push">Hello</span>
-          <span data-verb-trigger="pull">Hi</span>
-          <span data-verb-trigger="talk">Whoa</span>
-          <span data-verb-trigger="take">Live</span>
-          <span data-verb-trigger="open">Too much</span>
-          <span data-verb-trigger="close">A lot over there</span>
-          <span data-verb-trigger="give">What is that?</span>
-          <span data-verb-trigger="look">Come on now this is weird.</span>
         </span>
       </game-object>
       <game-object id="go3" x="-200" y="11.50">
@@ -56,18 +40,12 @@
         </span>
         <span slot="text">
           <span data-verb-trigger="default">This is the default</span>
-          <span data-verb-trigger="push">Hello</span>
-          <span data-verb-trigger="pull">Hi</span>
-          <span data-verb-trigger="talk">Whoa</span>
-          <span data-verb-trigger="take">Live</span>
-          <span data-verb-trigger="open">Too much</span>
-          <span data-verb-trigger="close">A lot over there</span>
-          <span data-verb-trigger="give">What is that?</span>
-          <span data-verb-trigger="look">Come on now this is weird.</span>
         </span>
       </game-object>
     </main>
+    <actions-menu id="am" verbs="push pull talk take open close give look"></actions-menu>
+    <text-display id="td" text=""></text-display>
   </template>
-  <script src="/tests/game-object.js" type="module"></script>
+  <script src="/tests/game-object.js"></script>
 </body>
 </html>

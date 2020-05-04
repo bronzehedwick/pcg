@@ -17,8 +17,9 @@ light theme.
 Usage
 -----
 
-The tag should be added inside the ``<body>`` tag, and outside the *stage*
-element.
+The tag should be added inside the ``<body>`` tag, and outside the
+:doc:`../usage/stage` element, usually inside a :doc:`../usage/rooms`
+file.
 
 The elements takes a single attribute - ``verbs`` - the contents of
 which should be a space seperated list of words, in the same mannor as

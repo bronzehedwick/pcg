@@ -6,8 +6,6 @@ import { GameObject } from '../game-object/game-object.mjs';
  * Pass in the id of the room to room, and optionally triggering-verbs to
  * specify verbs that trigger moving to the new room. If left unspecified the
  * default verb will be used.
- * @example
- *     <room-portal x="200" y="800" room="my-room" triggering-verbs="push"></room-portal>
  */
 export class RoomPortal extends GameObject {
 

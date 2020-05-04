@@ -15,8 +15,11 @@ things won't work, and there are missing all over the place.
    :maxdepth: 2
    :caption: Getting started:
 
+   usage/introduction
    usage/quickstart
    usage/installation
+   usage/stage
+   usage/rooms
 
 .. toctree::
    :maxdepth: 2

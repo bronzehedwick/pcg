@@ -1,7 +1,7 @@
 Game Object
 ============
 
-The base class that all *stage* elements extend. It is generally not
+The base class that all :doc:`../usage/stage` elements extend. It is generally not
 meant to be used directly, but can be used in a pintch.
 
 Since it provides common interfaces for generally useful functionality,
@@ -13,6 +13,9 @@ axis, generic **graphics** support, and defining text that responds to
 
 Usage
 -----
+
+The tag should be added inside the ``<body>`` tag, and outside the :doc:`../usage/stage`
+element, usually inside a :doc:`../usage/rooms` file.
 
 Position
 ^^^^^^^^
@@ -100,10 +103,10 @@ HTML attributes
 ---------------
 
 x
-  X position of the *Game Object* in pixels, relative to the *stage*. Required.
+  X position of the *Game Object* in pixels, relative to the :doc:`../usage/stage`. Required.
 
 y
-  Y position of the *Game Object* in pixels, relative to the *stage*. Required.
+  Y position of the *Game Object* in pixels, relative to the :doc:`../usage/stage`. Required.
 
 slot="graphic"
   Used inside the *Game Object* to define the visual representation. Place a ``<img>`` or other graphic tag inside. Can be used on any element type, although ``<span>`` or ``<div>`` are generally used since they are generic containers. Required.

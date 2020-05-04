@@ -26,6 +26,8 @@ Array.from(document.getElementsByTagName('link'))
  */
 function State() {
 
+  if (!document.getElementsByTagName('actions-menu').length) return;
+
   let verbs = document
     .getElementsByTagName('actions-menu')[0]
     .getAttribute('verbs')

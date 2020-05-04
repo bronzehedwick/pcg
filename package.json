@@ -8,11 +8,11 @@
     "test": "npm run lint",
     "docs": "cd docs && make html"
   },
-  "browerslist": {
+  "browerslist": [
     "defaults",
     "not IE",
     "not IE_Mob"
-  },
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bronzehedwick/pcg.git"

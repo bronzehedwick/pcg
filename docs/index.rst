@@ -34,5 +34,6 @@ things won't work, and there are missing all over the place.
    :maxdepth: 1
    :caption: Meta:
 
+   meta/design-goals
    meta/browser-support
    meta/license

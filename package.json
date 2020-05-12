@@ -5,8 +5,8 @@
   "main": "web/index.html",
   "scripts": {
     "lint": "eslint web",
-    "test": "npm run lint",
-    "docs": "cd docs && make html"
+    "docs": "cd docs && make html",
+    "demo": "python3 -m http.server"
   },
   "browerslist": [
     "defaults",
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/bronzehedwick/pcg#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
-    "eslint-plugin-jsdoc": "^24.0.0"
+    "eslint-plugin-jsdoc": "^24.0.0",
+    "qunitjs": "^2.4.1"
   }
 }

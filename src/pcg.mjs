@@ -74,8 +74,8 @@ function State() {
 
 // Use a closure to create private variables, and an export of the function
 // invokation - which returns an object - to create a pseudo-singleton pattern.
-const state = State();
-export { state };
+// const state = State();
+// export { state };
 
 /**
  * Load the given room.

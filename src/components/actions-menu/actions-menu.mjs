@@ -1,4 +1,4 @@
-import { state } from '../../pcg.mjs';
+// import { state } from '../../pcg.mjs';
 
 /**
  * Class represeting the utility bar for verbs and inventory.
@@ -10,6 +10,8 @@ class ActionsMenu extends HTMLElement {
    */
   constructor() {
     super();
+
+    document.body.dataset.verbActive = 'default';
 
     let contents = '';
     this.getAttribute('verbs').split(' ').forEach(verb => {
@@ -26,14 +28,16 @@ class ActionsMenu extends HTMLElement {
 
     // Add state of current active verb to the stage data attribute.
     this.addEventListener('pointerup', event => {
+      console.log('hello from pointerup menu');
       const element = event.target.closest('button');
       if (!element) return;
-      const active = this.querySelector('.verb[aria-checked="true"]');
-      if (active) {
-        active.setAttribute('aria-checked', 'false');
+      const previousActive = this.querySelector('.verb[aria-checked="true"]');
+      if (previousActive) {
+        previousActive.setAttribute('aria-checked', 'false');
       }
       element.setAttribute('aria-checked', 'true');
-      state.setActiveVerb(element.id);
+      document.body.dataset.verbActive = element.id;
+      // state.setActiveVerb(element.id);
     }, false);
 
   }

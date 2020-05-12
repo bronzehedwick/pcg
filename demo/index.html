@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PCG - Demo</title>
+  <link rel="stylesheet" href="/src/pcg.css">
+  <link id="room-1" rel="room" type="text/html" href="/demo/rooms/room-1.html">
+  <link rel="room" type="text/html" href="/demo/rooms/room-2.html">
+  <script src="/src/pcg.mjs" type="module" defer></script>
+  <script src="/src/components/game-object/game-object.mjs" type="module" defer></script>
+  <script src="/src/components/room-portal/room-portal.mjs" type="module" defer></script>
+  <script src="/src/components/text-display/text-display.mjs" type="module" defer></script>
+  <script src="/src/components/actions-menu/actions-menu.mjs" type="module" defer></script>
+</head>
+<body>
+  <main id="stage" class="stage">
+    <room-portal x="200" y="400" room="room-1" triggering-verbs="push pull">
+      <span slot="graphic">
+        <img src="./images/door-clip-art-clipart-door-line-art-a553.png">
+      </span>
+    </room-portal>
+  </main>
+  <actions-menu verbs="push pull talk take open close give look"></actions-menu>
+  <text-display text=""></text-display>
+</body>
+</html>

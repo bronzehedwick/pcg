@@ -63,7 +63,7 @@ html_static_path = ['_static']
 # -- Options for JavaScript (sphinx-js) --------------------------------------
 
 # Point to source files.
-js_source_path = '../web'
+js_source_path = '../src'
 jsdoc_config_path = '../.jsdoc_conf.js'
 
 # Indicate that JS is the only language.

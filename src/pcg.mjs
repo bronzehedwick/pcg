@@ -23,6 +23,7 @@ Array.from(document.getElementsByTagName('link'))
  * @property {Function} getVerbs - Get all defined verbs.
  * @property {Function} getActiveVerb - Get the currently active verb.
  * @property {Function} setActiveVerb - Set the active verb.
+ * @returns {object} The State object.
  */
 function State() {
 
@@ -70,7 +71,7 @@ function State() {
     },
 
   };
-};
+}
 
 // Use a closure to create private variables, and an export of the function
 // invokation - which returns an object - to create a pseudo-singleton pattern.

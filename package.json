@@ -4,7 +4,7 @@
   "description": "A web-based point and click game engine.",
   "main": "web/index.html",
   "scripts": {
-    "lint": "eslint web",
+    "lint": "npx eslint \"src/**/*js\"",
     "docs": "cd docs && make html",
     "demo": "python3 -m http.server"
   },

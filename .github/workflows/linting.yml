@@ -32,4 +32,4 @@ jobs:
       - uses: actions/checkout@v1
       - name: Check for console usage
         run: |
-          [ $(grep -R "console." src | wc -l) = 0 ]
+          [ $(grep -R "console.log" src | wc -l) = 0 ]

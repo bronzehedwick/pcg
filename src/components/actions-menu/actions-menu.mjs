@@ -28,7 +28,6 @@ class ActionsMenu extends HTMLElement {
 
     // Add state of current active verb to the stage data attribute.
     this.addEventListener('pointerup', event => {
-      console.log('hello from pointerup menu');
       const element = event.target.closest('button');
       if (!element) return;
       const previousActive = this.querySelector('.verb[aria-checked="true"]');

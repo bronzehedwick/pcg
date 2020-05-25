@@ -2,12 +2,14 @@
   "name": "pcg",
   "version": "0.0.0",
   "description": "A web-based point and click game engine.",
-  "main": "web/index.html",
   "scripts": {
     "cypress:open": "npx cypress open",
-    "lint": "npx eslint \"src/**/*js\"",
+    "cypress:run": "npx cypress run",
     "docs": "cd docs && make html",
-    "demo": "npx http-server"
+    "lint": "npx eslint \"src/**/*js\"",
+    "serve": "$(npm bin)/serve",
+    "start": "npm run serve",
+    "test": "npm start & >/dev/null 2>&1 && npm run cypress:run"
   },
   "browerslist": [
     "defaults",
@@ -31,6 +33,6 @@
     "cypress": "^4.5.0",
     "eslint": "^6.8.0",
     "eslint-plugin-jsdoc": "^24.0.0",
-    "http-server": "^0.12.3"
+    "serve": "^11.3.1"
   }
 }

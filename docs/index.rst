@@ -20,6 +20,7 @@ things won't work, and there are missing all over the place.
    usage/installation
    usage/stage
    usage/rooms
+   usage/backgrounds
 
 .. toctree::
    :maxdepth: 2

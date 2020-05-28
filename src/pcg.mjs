@@ -29,4 +29,8 @@ export async function loadRoom(id) {
   if (!response.ok) return console.error(response.statusText);
   const data = await response.text();
   stageElement.innerHTML = data;
+  // Change class/data attribute for styles/scripts to point to loaded room.
+  stageElement.classList.remove(document.body.dataset.room);
+  stageElement.classList.add(`room--${id}`);
+  document.body.setAttribute('data-room', id);
 }

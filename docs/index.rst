@@ -19,7 +19,7 @@ things won't work, and there are missing all over the place.
    usage/quickstart
    usage/installation
    usage/stage
-   usage/rooms
+   usage/scenes
    usage/backgrounds
 
 .. toctree::
@@ -28,7 +28,7 @@ things won't work, and there are missing all over the place.
 
    components/actions-menu
    components/game-object
-   components/room-portal
+   components/scene-portal
    components/text-display
 
 .. toctree::

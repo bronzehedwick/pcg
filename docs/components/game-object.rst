@@ -15,7 +15,7 @@ Usage
 -----
 
 The tag should be added inside the ``<body>`` tag, and outside the :doc:`../usage/stage`
-element, usually inside a :doc:`../usage/rooms` file.
+element, usually inside a :doc:`../usage/scenes` file.
 
 Position
 ^^^^^^^^
@@ -54,7 +54,7 @@ The *Game Object* provides functionality to respond to *verbs* selected
 by the player, and responding by displaying text.
 
 Other functionality is handled by elements that extend the *Game
-Object*, such as :doc:`room-portal`.
+Object*, such as :doc:`scene-portal`.
 
 To define the text, place an element (usually ``<div>`` or ``<span>``)
 inside the ``<game-object>`` with the `slot`_ name "text". Inside that,

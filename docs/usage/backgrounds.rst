@@ -2,11 +2,11 @@ Backgrounds
 ===========
 
 Backgrounds are important. They show the scenary of the scene. Duh.
-Without them, every room in your game will look like that load program
+Without them, every scene in your game will look like that load program
 from *The Matrix*, and that gets old quick.
 
 Since PCG is just regular HTML, the best way to implement a background
-is to add a standard `img_` tag to the top of each :doc:`../usage/rooms`
+is to add a standard `img_` tag to the top of each :doc:`../usage/scenes`
 file, above all your game objects.
 
 .. code-block:: html

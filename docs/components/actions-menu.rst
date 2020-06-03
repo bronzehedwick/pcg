@@ -18,7 +18,7 @@ Usage
 -----
 
 The tag should be added inside the ``<body>`` tag, and outside the
-:doc:`../usage/stage` element, usually inside a :doc:`../usage/rooms`
+:doc:`../usage/stage` element, usually inside a :doc:`../usage/scenes`
 file.
 
 The elements takes a single attribute - ``verbs`` - the contents of

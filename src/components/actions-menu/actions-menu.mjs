@@ -24,19 +24,23 @@ class ActionsMenu extends HTMLElement {
       `;
     });
 
-    this.innerHTML = `<ul role="menubar" class="actions-menu">${contents}</ul>`;
+    this.innerHTML = `<link rel="stylesheet" href="/src/components/actions-menu/actions-menu.css" />
+    <ul role="menubar" class="actions-menu">${contents}</ul>`;
 
     // Add state of current active verb to the stage data attribute.
-    this.addEventListener('pointerup', event => {
-      const element = event.target.closest('button');
-      if (!element) return;
-      const previousActive = this.querySelector('.verb[aria-checked="true"]');
+    document.documentElement.addEventListener('pointerup', event => {
+      const activeVerb = event.target.closest('button.verb');
+      const previousActive = document.querySelector('button.verb[aria-checked="true"]');
+      // Disable any previously enabled verbs.
       if (previousActive) {
+        document.body.dataset.verbActive = 'default';
         previousActive.setAttribute('aria-checked', 'false');
       }
-      element.setAttribute('aria-checked', 'true');
-      document.body.dataset.verbActive = element.id;
-      // state.setActiveVerb(element.id);
+      // If a non-button element was clicked, we're done.
+      if (!activeVerb) return;
+      // If the button was clicked, enable it and disable any previously clicked buttons.
+      activeVerb.setAttribute('aria-checked', 'true');
+      document.body.dataset.verbActive = activeVerb.id;
     }, false);
 
   }

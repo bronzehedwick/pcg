@@ -1,0 +1,68 @@
+.actions-menu {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  position: fixed;
+  overflow: auto;
+  background-color: #b08870;
+}
+
+@media screen and (orientation: portrait) {
+  body {
+    --actions-menu-size: 5em;
+  }
+
+  .stage {
+    height: calc(100vh - var(--actions-menu-size));
+  }
+
+  .actions-menu {
+    bottom: 0;
+    width: 100vw;
+    height: var(--actions-menu-size);
+    align-content: center;
+  }
+
+}
+
+@media screen and (orientation: landscape) {
+  body {
+    --actions-menu-size: 16ch;
+  }
+
+  .stage {
+    width: calc(100vw - var(--actions-menu-size));
+    margin-left: var(--actions-menu-size);
+  }
+
+  .actions-menu {
+    top: 0;
+    width: var(--actions-menu-size);
+    height: 100vh;
+    align-content: flex-start;
+  }
+}
+
+li {
+  margin: 3px;
+}
+
+button {
+  font-family: monospace, monospace;
+  font-size: 1.4rem;
+  border: 1px solid #000;
+  background: #94705a;
+  box-shadow: 2px 2px 0px #726f6f;
+  padding: 1ch;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #fcfa7a;
+}
+
+button[aria-checked="true"] {
+  background-color: #674e3e;
+  box-shadow: inset 1px 1px 2px #000;
+}

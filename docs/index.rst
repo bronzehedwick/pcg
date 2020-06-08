@@ -29,6 +29,7 @@ things won't work, and there are missing all over the place.
    components/actions-menu
    components/game-object
    components/scene-portal
+   components/inventory-item
    components/text-display
 
 .. toctree::

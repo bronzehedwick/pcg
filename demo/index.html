@@ -10,11 +10,15 @@
   <script src="/src/pcg.mjs" type="module" defer></script>
   <script src="/src/components/game-object/game-object.mjs" type="module" defer></script>
   <script src="/src/components/scene-portal/scene-portal.mjs" type="module" defer></script>
+  <script src="/src/components/inventory-item/inventory-item.mjs" type="module" defer></script>
   <script src="/src/components/text-display/text-display.mjs" type="module" defer></script>
   <script src="/src/components/actions-menu/actions-menu.mjs" type="module" defer></script>
 </head>
 <body>
   <main id="stage" class="stage">
+    <inventory-item x="400" y="20">
+      <span slot="graphic"><img src="./images/gopher.svg" alt="Gopher"></span>
+    </inventory-item>
     <scene-portal x="200" y="400" scene="scene-1" triggering-verbs="open">
       <span slot="graphic">
         <img src="./images/door-clip-art-clipart-door-line-art-a553.png">

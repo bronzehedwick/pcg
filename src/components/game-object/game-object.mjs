@@ -1,5 +1,6 @@
 // import { state } from '../../pcg.mjs';
 
+// Add a single template to the DOM for all game objects to reference.
 const gameObjectTemplate = document.createElement('template');
 gameObjectTemplate.id = 'game-object-template';
 gameObjectTemplate.innerHTML = `
@@ -36,6 +37,11 @@ export class GameObject extends HTMLElement {
 
     const template = document.getElementById('game-object-template');
     shadow.appendChild(template.content.cloneNode(true));
+
+    this.triggeringVerbs = this.getAttribute('triggering-verbs');
+    if (this.triggeringVerbs) {
+      this.triggeringVerbs = this.triggeringVerbs.split(' ');
+    }
 
     this.callbacks = [];
     this.addEventListener('pointerup', this.delegateInteraction, false);

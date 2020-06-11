@@ -17,11 +17,6 @@ export class ScenePortal extends GameObject {
     super();
 
     this.scene = this.getAttribute('scene');
-    this.triggeringVerbs = this.getAttribute('triggering-verbs');
-    if (this.triggeringVerbs) {
-      this.triggeringVerbs = this.triggeringVerbs.split(' ');
-    }
-
     this.registerInteractCallback(this.sceneCallback);
   }
 

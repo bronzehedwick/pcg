@@ -108,6 +108,9 @@ x
 y
   Y position of the *Game Object* in pixels, relative to the :doc:`../usage/stage`. Required.
 
+triggering-verbs
+  A list of space-seperated verbs that will trigger the scene move. Required.
+
 slot="graphic"
   Used inside the *Game Object* to define the visual representation. Place a ``<img>`` or other graphic tag inside. Can be used on any element type, although ``<span>`` or ``<div>`` are generally used since they are generic containers. Required.
 

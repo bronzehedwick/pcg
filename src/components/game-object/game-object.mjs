@@ -25,8 +25,6 @@ export class GameObject extends HTMLElement {
     shadow.innerHTML = `<style>
     :host {
       position: absolute;
-      width: 100px;
-      height: 100px;
       top: ${this.getAttribute('y') ? this.getAttribute('y') : 0}px;
       left: ${this.getAttribute('x') ? this.getAttribute('x') : 0}px;
     }

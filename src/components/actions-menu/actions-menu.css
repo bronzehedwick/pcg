@@ -1,10 +1,27 @@
-.actions-menu {
+.menu {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   overflow: auto;
   background-color: #b08870;
+}
+
+.menu inventory-item {
+  position: static;
+}
+
+.menu img,
+.menu svg {
+  width: calc(var(--actions-menu-size) / 2);
+  height: auto;
+}
+
+.submenu--verbs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 @media screen and (orientation: portrait) {
@@ -16,10 +33,13 @@
     height: calc(100vh - var(--actions-menu-size));
   }
 
-  .actions-menu {
+  .menu {
     bottom: 0;
     width: 100vw;
     height: var(--actions-menu-size);
+  }
+
+  .submenu--verbs {
     align-content: center;
   }
 
@@ -35,16 +55,24 @@
     margin-left: var(--actions-menu-size);
   }
 
-  .actions-menu {
+  .menu {
     top: 0;
     width: var(--actions-menu-size);
     height: 100vh;
+  }
+
+  .submenu--verbs {
     align-content: flex-start;
   }
 }
 
+.settings,
 li {
   margin: 3px;
+}
+
+.menu > li {
+  margin: 0;
 }
 
 button {

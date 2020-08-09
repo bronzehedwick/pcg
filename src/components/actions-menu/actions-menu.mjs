@@ -11,7 +11,7 @@ class ActionsMenu extends HTMLElement {
   constructor() {
     super();
 
-    document.body.dataset.verbActive = 'default';
+    document.body.dataset.activeAction = 'default';
 
     let verbsContents = '';
     this.getAttribute('verbs').split(' ').forEach(verb => {
@@ -42,24 +42,24 @@ class ActionsMenu extends HTMLElement {
 
     // Add state of current active verb to the stage data attribute.
     document.documentElement.addEventListener('pointerup', event => {
-      const activeVerb = event.target.closest('.menu-button');
+      const activeAction = event.target.closest('.menu-button');
       const previousActive = document
         .querySelector('.menu-button[aria-checked="true"]');
       // Disable any previously enabled verbs.
       if (previousActive) {
-        document.body.dataset.verbActive = 'default';
+        document.body.dataset.activeAction = 'default';
         previousActive.setAttribute('aria-checked', 'false');
       }
       // If a non-button element was clicked, we're done.
-      if (!activeVerb) return;
+      if (!activeAction) return;
       // If the button was clicked, enable it and disable any previously
       // clicked buttons.
-      if (!activeVerb.hasAttribute('just-added')) {
-        activeVerb.setAttribute('aria-checked', 'true');
+      if (!activeAction.hasAttribute('just-added')) {
+        activeAction.setAttribute('aria-checked', 'true');
+        document.body.dataset.activeAction = activeAction.id;
       } else {
-        activeVerb.removeAttribute('just-added');
+        activeAction.removeAttribute('just-added');
       }
-      document.body.dataset.verbActive = activeVerb.id;
     }, false);
 
   }
@@ -87,12 +87,14 @@ class ActionsMenu extends HTMLElement {
     li.setAttribute('class', 'submenu__item');
     li.setAttribute('role', 'none');
     const button = document.createElement('button');
+    button.setAttribute('id', newValue);
     button.setAttribute('class', 'item menu-button');
     button.setAttribute('role', 'menuitemradio');
     button.setAttribute('aria-checked', 'false');
     button.setAttribute('just-added', '');
     button.setAttribute('title', `${newValue.charAt().toUpperCase()}${newValue.slice(1, newValue.length)}`);
     const item = document.getElementById(newValue);
+    item.removeAttribute(newValue);
     button.appendChild(item);
     li.appendChild(button);
     inventoryMenu.appendChild(li);

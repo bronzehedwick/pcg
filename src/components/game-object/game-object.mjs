@@ -36,14 +36,14 @@ export class GameObject extends HTMLElement {
     const template = document.getElementById('game-object-template');
     shadow.appendChild(template.content.cloneNode(true));
 
-    this.triggeringVerbs = this.getAttribute('triggering-verbs');
-    if (this.triggeringVerbs) {
-      this.triggeringVerbs = this.triggeringVerbs.split(' ');
+    this.triggeringActions = this.getAttribute('triggering-actions');
+    if (this.triggeringActions) {
+      this.triggeringActions = this.triggeringActions.split(' ');
     }
 
     this.callbacks = [];
     this.addEventListener('pointerup', this.delegateInteraction, false);
-    this.registerInteractCallback(this.displayVerbText);
+    this.registerInteractCallback(this.displayText);
   }
 
   /**
@@ -69,22 +69,20 @@ export class GameObject extends HTMLElement {
   }
 
   /**
-   * Sends the given text for the triggered verb to the text-display component.
+   * Sends the given text for the triggered action to the text-display component.
    *
    * @param {Event} event The pointerup event.
    * @returns {void}
    */
-  displayVerbText(event) {
-    const verb = document.body.dataset.verbActive;
-    if (!verb) return;
+  displayText(event) {
+    const action = document.body.dataset.activeAction;
+    if (!action) return;
     const textElement = event.target.closest(this.localName)
-      .querySelector(`[data-verb-trigger="${verb}"`);
-      // .querySelector(`[data-verb-trigger="${state.getActiveVerb()}"`);
+      .querySelector(`[data-action-trigger="${action}"`);
     if (!textElement) return;
     const textContent = textElement.textContent;
     if (!textContent) return;
-    document.body.dataset.verbActive = 'default';
-    // state.setActiveVerb('default');
+    document.body.dataset.activeAction = 'default';
     document.querySelector('text-display').setAttribute('text', textContent);
   }
 

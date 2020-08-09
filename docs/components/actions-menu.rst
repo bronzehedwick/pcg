@@ -44,6 +44,9 @@ HTML attributes
 verbs
   Space seperated list of words to be transformed into player actions.
 
+items
+  Space seperated list of words to be transformed into player items. Generated dynamically based on player actions.
+
 JavaScript code signature
 -------------------------
 

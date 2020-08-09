@@ -33,8 +33,8 @@ x
 y
   Y position of the *Game Object* in pixels, relative to the :doc:`../usage/stage`. Required.
 
-triggering-verbs
-  A list of space-seperated verbs that will trigger the scene move. Required.
+triggering-actions
+  A list of space-seperated verbs and/or items that will trigger the scene move. Required.
 
 slot="graphic"
   Used inside the *Game Object* to define the visual representation. Place a ``<img>`` or other graphic tag inside. Can be used on any element type, although ``<span>`` or ``<div>`` are generally used since they are generic containers. Required.
@@ -42,8 +42,8 @@ slot="graphic"
 slot="text"
   Used inside the *Game Object* to define text responses to player actions. Can be used on any element type, although ``<span>`` or ``<div>`` are generally used since they are generic containers.
 
-data-verb-trigger
-  Used to signal which *verb* the element's text should apply to. Can be applied to as many elements as there are defined *verbs*, plus the *default* verb. Must live inside *Game Object* and inside an element with ``slot="text"``.
+data-action-trigger
+  Used to signal which *verb* or *item* the element's text should apply to. Can be applied to as many elements as there are defined *verbs* or *items*, plus the *default* action. Must live inside *Game Object* and inside an element with ``slot="text"``.
 
 JavaScript code signature
 -------------------------

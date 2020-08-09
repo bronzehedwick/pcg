@@ -19,11 +19,11 @@ export class InventoryItem extends GameObject {
    * @returns {void}
    */
   obtainCallback() {
-    const verb = document.body.dataset.verbActive;
+    const verb = document.body.dataset.activeAction;
     // Ignore if the active verb is not the "triggering verb" for this item.
     if (!verb) return;
-    if (!this.triggeringVerbs) return;
-    if (!this.triggeringVerbs.includes(verb)) return;
+    if (!this.triggeringActions) return;
+    if (!this.triggeringActions.includes(verb)) return;
     // Create the items property on actions-menu if it doesn't exist.
     const actionsMenu = document.getElementsByTagName('actions-menu')[0];
     if (!actionsMenu.getAttribute('items')) {

@@ -1,11 +1,10 @@
-Scene Portal
-============
+Inventory Item
+==============
 
-*Scene Portal* extends :doc:`game-object`. Every option available in
-*Game Object* is available in *Scene Portal*.
+*Inventory Item* extends :doc:`game-object`. Every option available in
+*Game Object* is available in *Inventory Item*.
 
-Use it to move players from one :doc:`../usage/scenes` to another. Think:
-a door.
+Use it when you want players to be able to add the object to their inventory.
 
 Usage
 -----
@@ -14,22 +13,16 @@ The tag should be added inside the ``<body>`` tag, and outside the
 :doc:`../usage/stage` element, usually inside a :doc:`../usage/scenes`
 file.
 
-It accepts two unique attributes, ``scene`` and ``triggering-actions``.
-Use scene to specify the scene link ID you want the player to move
-to. Use triggering verbs to specify which verbs should trigger the
-scene move. The verbs listed here must be one of the verbs listed in
-:doc:`actions-menu`.
-
 Example
 -------
 
 .. code-block:: html
 
-  <scene-portal x="200" y="800" scene="my-scene" triggering-actions="push open">
+  <inventory-item x="200" y="800">
     <span slot="graphic">
-      <img alt="Door" src="door.gif">
+      <img alt="Bean Can" src="bean-can.png">
     </span>
-  </scene-portal>
+  </inventory-item>
 
 HTML attributes
 ---------------
@@ -39,9 +32,6 @@ x
 
 y
   Y position of the *Game Object* in pixels, relative to the :doc:`../usage/stage`. Required.
-
-scene
-  The `id`_ of the :doc:`../usage/scenes` ``<link>`` to move to. Required.
 
 triggering-actions
   A list of space-seperated verbs and/or items that will trigger the scene move. Required.
@@ -58,9 +48,7 @@ data-action-trigger
 JavaScript code signature
 -------------------------
 
-*Scene Portal* extends :doc:`game-object`.
+*Inventory Item* extends :doc:`game-object`.
 
-.. js:autoclass:: ScenePortal
+.. js:autoclass:: InventoryItem
   :members:
-
-.. _id: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id

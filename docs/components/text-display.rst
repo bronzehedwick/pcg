@@ -15,7 +15,7 @@ Right now, this component is required.
 Usage
 -----
 
-Add the tag inside ``<body>``, but outside :doc:`stage`.
+Add the tag inside ``<body>``, but outside :doc:`../usage/stage`.
 
 .. code-block:: html
 

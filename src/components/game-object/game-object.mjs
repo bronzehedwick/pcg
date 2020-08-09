@@ -1,5 +1,6 @@
 // import { state } from '../../pcg.mjs';
 
+// Add a single template to the DOM for all game objects to reference.
 const gameObjectTemplate = document.createElement('template');
 gameObjectTemplate.id = 'game-object-template';
 gameObjectTemplate.innerHTML = `
@@ -24,8 +25,6 @@ export class GameObject extends HTMLElement {
     shadow.innerHTML = `<style>
     :host {
       position: absolute;
-      width: 100px;
-      height: 100px;
       top: ${this.getAttribute('y') ? this.getAttribute('y') : 0}px;
       left: ${this.getAttribute('x') ? this.getAttribute('x') : 0}px;
     }
@@ -37,9 +36,14 @@ export class GameObject extends HTMLElement {
     const template = document.getElementById('game-object-template');
     shadow.appendChild(template.content.cloneNode(true));
 
+    this.triggeringActions = this.getAttribute('triggering-actions');
+    if (this.triggeringActions) {
+      this.triggeringActions = this.triggeringActions.split(' ');
+    }
+
     this.callbacks = [];
     this.addEventListener('pointerup', this.delegateInteraction, false);
-    this.registerInteractCallback(this.displayVerbText);
+    this.registerInteractCallback(this.displayText);
   }
 
   /**
@@ -65,22 +69,20 @@ export class GameObject extends HTMLElement {
   }
 
   /**
-   * Sends the given text for the triggered verb to the text-display component.
+   * Sends the given text for the triggered action to the text-display component.
    *
    * @param {Event} event The pointerup event.
    * @returns {void}
    */
-  displayVerbText(event) {
-    const verb = document.body.dataset.verbActive;
-    if (!verb) return;
+  displayText(event) {
+    const action = document.body.dataset.activeAction;
+    if (!action) return;
     const textElement = event.target.closest(this.localName)
-      .querySelector(`[data-verb-trigger="${verb}"`);
-      // .querySelector(`[data-verb-trigger="${state.getActiveVerb()}"`);
+      .querySelector(`[data-action-trigger="${action}"`);
     if (!textElement) return;
     const textContent = textElement.textContent;
     if (!textContent) return;
-    document.body.dataset.verbActive = 'default';
-    // state.setActiveVerb('default');
+    document.body.dataset.activeAction = 'default';
     document.querySelector('text-display').setAttribute('text', textContent);
   }
 

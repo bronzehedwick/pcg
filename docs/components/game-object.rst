@@ -58,18 +58,18 @@ Object*, such as :doc:`scene-portal`.
 
 To define the text, place an element (usually ``<div>`` or ``<span>``)
 inside the ``<game-object>`` with the `slot`_ name "text". Inside that,
-place any number of elements with the ``data-verb-trigger`` attribute.
+place any number of elements with the ``data-action-trigger`` attribute.
 
 .. code-block:: html
 
   <game-object x="200" y="150">
     <span slot="text">
-      <span data-verb-trigger="greet">Hello!</span>
-      <span data-verb-trigger="examine">It's pretty interesting.</span>
+      <span data-action-trigger="greet">Hello!</span>
+      <span data-action-trigger="examine">It's pretty interesting.</span>
     </span>
   </game-object>
 
-The value of each ``data-verb-trigger`` should be one of the verbs
+The value of each ``data-action-trigger`` should be one of the verbs
 defined in :doc:`actions-menu`, or ``default`` for the action when
 nothing else is selected.
 
@@ -87,15 +87,15 @@ Full example
       <img alt="My image" src="example.jpg">
     </span>
     <span slot="text">
-      <span data-verb-trigger="default">This is the default.</span>
-      <span data-verb-trigger="push">You push the thing.</span>
-      <span data-verb-trigger="pull">You pull the thing.</span>
-      <span data-verb-trigger="talk">You talk to the thing. It doesn't say much.</span>
-      <span data-verb-trigger="take">You can't take this thing.</span>
-      <span data-verb-trigger="open">It opens up, and talks about it's childhood.</span>
-      <span data-verb-trigger="close">Yeah, enough of this, shut it down.</span>
-      <span data-verb-trigger="give">What do you even give an abstract demo?</span>
-      <span data-verb-trigger="look">It's an abstract demo.</span>
+      <span data-action-trigger="default">This is the default.</span>
+      <span data-action-trigger="push">You push the thing.</span>
+      <span data-action-trigger="pull">You pull the thing.</span>
+      <span data-action-trigger="talk">You talk to the thing. It doesn't say much.</span>
+      <span data-action-trigger="take">You can't take this thing.</span>
+      <span data-action-trigger="open">It opens up, and talks about it's childhood.</span>
+      <span data-action-trigger="close">Yeah, enough of this, shut it down.</span>
+      <span data-action-trigger="give">What do you even give an abstract demo?</span>
+      <span data-action-trigger="look">It's an abstract demo.</span>
     </span>
   </game-object>
 
@@ -108,14 +108,17 @@ x
 y
   Y position of the *Game Object* in pixels, relative to the :doc:`../usage/stage`. Required.
 
+triggering-actions
+  A list of space-seperated verbs and/or items that will trigger the scene move. Required.
+
 slot="graphic"
   Used inside the *Game Object* to define the visual representation. Place a ``<img>`` or other graphic tag inside. Can be used on any element type, although ``<span>`` or ``<div>`` are generally used since they are generic containers. Required.
 
 slot="text"
   Used inside the *Game Object* to define text responses to player actions. Can be used on any element type, although ``<span>`` or ``<div>`` are generally used since they are generic containers.
 
-data-verb-trigger
-  Used to signal which *verb* the element's text should apply to. Can be applied to as many elements as there are defined *verbs*, plus the *default* verb. Must live inside *Game Object* and inside an element with ``slot="text"``.
+data-action-trigger
+  Used to signal which *verb* or *item* the element's text should apply to. Can be applied to as many elements as there are defined *verbs* or *items*, plus the *default* action. Must live inside *Game Object* and inside an element with ``slot="text"``.
 
 JavaScript code signature
 -------------------------

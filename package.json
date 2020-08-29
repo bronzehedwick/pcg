@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/bronzehedwick/pcg#readme",
   "devDependencies": {
-    "cypress": "^4.5.0",
+    "cypress": "^5.0.0",
     "eslint": "^6.8.0",
     "eslint-plugin-jsdoc": "^24.0.0",
     "serve": "^11.3.2"

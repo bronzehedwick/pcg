@@ -16,7 +16,7 @@ export class ScenePortal extends GameObject {
   constructor() {
     super();
 
-    this.scene = this.getAttribute('scene');
+    this.scenePath = this.getAttribute('scene-path');
     this.registerInteractCallback(this.sceneCallback);
   }
 
@@ -29,7 +29,7 @@ export class ScenePortal extends GameObject {
     const action = document.body.dataset.activeAction;
     if (!action) return;
     if (this.triggeringActions.includes(action)) {
-      loadScene(this.scene);
+      loadScene(this.scenePath);
     }
   }
 }

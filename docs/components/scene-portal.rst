@@ -14,18 +14,18 @@ The tag should be added inside the ``<body>`` tag, and outside the
 :doc:`../usage/stage` element, usually inside a :doc:`../usage/scenes`
 file.
 
-It accepts two unique attributes, ``scene`` and ``triggering-actions``.
-Use scene to specify the scene link ID you want the player to move
-to. Use triggering verbs to specify which verbs should trigger the
-scene move. The verbs listed here must be one of the verbs listed in
-:doc:`actions-menu`.
+It accepts two unique attributes, ``scene-path`` and
+``triggering-actions``. Use scene-path to specify the URL you want
+the player to move to. Use triggering verbs to specify which verbs
+should trigger the scene move. The verbs listed here must be one of the
+verbs listed in :doc:`actions-menu`.
 
 Example
 -------
 
 .. code-block:: html
 
-  <scene-portal x="200" y="800" scene="my-scene" triggering-actions="push open">
+  <scene-portal x="200" y="800" scene-path="/scene-1.html" triggering-actions="push open">
     <span slot="graphic">
       <img alt="Door" src="door.gif">
     </span>
@@ -41,7 +41,7 @@ y
   Y position of the *Game Object* in pixels, relative to the :doc:`../usage/stage`. Required.
 
 scene
-  The `id`_ of the :doc:`../usage/scenes` ``<link>`` to move to. Required.
+  The `url`_ of the :doc:`../usage/scenes` to move to. Required.
 
 triggering-actions
   A list of space-seperated verbs and/or items that will trigger the scene move. Required.

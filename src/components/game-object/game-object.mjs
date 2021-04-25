@@ -75,14 +75,11 @@ export class GameObject extends HTMLElement {
    * @returns {void}
    */
   displayText(event) {
-    const action = document.body.dataset.activeAction;
-    if (!action) return;
     const textElement = event.target.closest(this.localName)
-      .querySelector(`[data-action-trigger="${action}"`);
+      .querySelector(`[data-action-trigger="${document.body.dataset.activeAction}"`);
     if (!textElement) return;
     const textContent = textElement.textContent;
     if (!textContent) return;
-    document.body.dataset.activeAction = 'default';
     document.querySelector('text-display').setAttribute('text', textContent);
   }
 

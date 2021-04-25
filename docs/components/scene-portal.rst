@@ -40,8 +40,8 @@ x
 y
   Y position of the *Game Object* in pixels, relative to the :doc:`../usage/stage`. Required.
 
-scene
-  The `url`_ of the :doc:`../usage/scenes` to move to. Required.
+scene-path
+  The URL of the :doc:`../usage/scenes` to move to. Required.
 
 triggering-actions
   A list of space-seperated verbs and/or items that will trigger the scene move. Required.
@@ -62,5 +62,3 @@ JavaScript code signature
 
 .. js:autoclass:: ScenePortal
   :members:
-
-.. _id: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id

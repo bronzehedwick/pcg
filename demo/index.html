@@ -6,17 +6,15 @@
   <title>PCG - Demo</title>
   <link rel="stylesheet" href="/src/pcg.css">
   <script src="/src/pcg.mjs" type="module" defer></script>
-  <script src="/src/components/game-object/game-object.mjs" type="module" defer></script>
-  <script src="/src/components/scene-portal/scene-portal.mjs" type="module" defer></script>
-  <script src="/src/components/inventory-item/inventory-item.mjs" type="module" defer></script>
-  <script src="/src/components/text-display/text-display.mjs" type="module" defer></script>
-  <script src="/src/components/actions-menu/actions-menu.mjs" type="module" defer></script>
 </head>
 <body>
   <main id="stage" class="stage">
     <img src="./images/room.png" alt="Room">
     <inventory-item id="key" x="154" y="1000" triggering-actions="take">
       <span slot="graphic"><img src="./images/key.png" alt="Key" alt="Key" width="50" height="18"></span>
+      <span slot="text">
+        <span data-action-trigger="take">You take the key.</span>
+      </span>
     </inventory-item>
     <scene-portal x="725" y="500" scene-path="/demo/scenes/scene-1.html" triggering-actions="open">
       <span slot="graphic">
